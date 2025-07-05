@@ -1,1 +1,16 @@
 
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/<your-username>/n8n-on-render
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: mypassword
+      - key: WEBHOOK_URL
+        value: https://<your-n8n-url>.onrender.com/
